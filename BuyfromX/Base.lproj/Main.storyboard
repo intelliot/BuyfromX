@@ -1,25 +1,107 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjR-Xq-c2d">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="bt_mono-Regular.otf">
+            <string>bt_mono-Regular</string>
+            <string>bt_mono-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Initial View Controller-->
+        <scene sceneID="bke-Xx-fGh">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="AXW-OR-g8b" customClass="BXInitialViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="1cG-EM-dNN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Swh-62-Rnb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="XQU-iZ-qQZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DNl-Ks-kPt">
+                                <rect key="frame" x="60" y="60" width="480" height="480"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Buy It Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="arE-ek-g16">
+                                        <rect key="frame" x="20" y="439" width="441" height="21"/>
+                                        <fontDescription key="fontDescription" name="bt_mono-Regular" family="bt_mono" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="438" width="209" height="20"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Buy from X" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-tJ-z6G">
+                                        <rect key="frame" x="20" y="140" width="441" height="43"/>
+                                        <fontDescription key="fontDescription" name="bt_mono-Regular" family="bt_mono" pointSize="36"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="ZCi-tJ-z6G" secondAttribute="centerX" id="D7B-5u-i3M"/>
+                                    <constraint firstItem="arE-ek-g16" firstAttribute="top" secondItem="ZCi-tJ-z6G" secondAttribute="bottom" constant="256" id="PJk-jz-5IP"/>
+                                    <constraint firstAttribute="bottom" secondItem="arE-ek-g16" secondAttribute="bottom" constant="20" id="PMj-0P-gj3"/>
+                                    <constraint firstItem="ZCi-tJ-z6G" firstAttribute="centerY" secondItem="DNl-Ks-kPt" secondAttribute="bottom" multiplier="1/3" constant="1" id="WCu-44-R0n"/>
+                                    <constraint firstItem="ZCi-tJ-z6G" firstAttribute="leading" secondItem="DNl-Ks-kPt" secondAttribute="leading" constant="20" symbolic="YES" id="a5g-LD-lqt"/>
+                                    <constraint firstAttribute="centerX" secondItem="arE-ek-g16" secondAttribute="centerX" id="bZp-sR-ewt"/>
+                                    <constraint firstItem="ZCi-tJ-z6G" firstAttribute="top" secondItem="DNl-Ks-kPt" secondAttribute="top" constant="140" id="dFf-4c-IFS"/>
+                                    <constraint firstItem="arE-ek-g16" firstAttribute="leading" secondItem="DNl-Ks-kPt" secondAttribute="leading" constant="20" symbolic="YES" id="e6d-Bc-MQD"/>
+                                    <constraint firstAttribute="centerX" secondItem="ZCi-tJ-z6G" secondAttribute="centerX" id="kla-vb-HPC"/>
+                                    <constraint firstAttribute="centerX" secondItem="arE-ek-g16" secondAttribute="centerX" id="nRk-pU-Coa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="D7B-5u-i3M"/>
+                                        <exclude reference="dFf-4c-IFS"/>
+                                        <exclude reference="PJk-jz-5IP"/>
+                                        <exclude reference="bZp-sR-ewt"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="D7B-5u-i3M"/>
+                                        <include reference="dFf-4c-IFS"/>
+                                        <include reference="PJk-jz-5IP"/>
+                                        <include reference="bZp-sR-ewt"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="DNl-Ks-kPt" secondAttribute="centerY" id="Xl5-30-jkM"/>
+                            <constraint firstAttribute="centerX" secondItem="DNl-Ks-kPt" secondAttribute="centerX" id="eed-Oi-Fk2"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IYh-CU-Hse"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgI-Q2-HxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1155" y="278"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UVH-o7-NiT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vjR-Xq-c2d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xGQ-Ir-k1r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AXW-OR-g8b" kind="relationship" relationship="rootViewController" id="Ajm-EI-iYD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPm-Rr-voX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="278"/>
         </scene>
     </scenes>
 </document>

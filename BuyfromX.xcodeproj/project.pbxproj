@@ -99,6 +99,17 @@
 			path = "bt_mono-AllStyles-v1p010-OTF-MAC";
 			sourceTree = "<group>";
 		};
+		8405FBF11AAA7E140069545B /* Products View */ = {
+			isa = PBXGroup;
+			children = (
+				848634561AAA2AF600523BEB /* ProductsTableViewController.h */,
+				848634571AAA2AF600523BEB /* ProductsTableViewController.m */,
+				8405FBE21AAA596B0069545B /* BXProductTableViewCell.h */,
+				8405FBE31AAA596B0069545B /* BXProductTableViewCell.m */,
+			);
+			name = "Products View";
+			sourceTree = "<group>";
+		};
 		848634431AAA2AF600523BEB = {
 			isa = PBXGroup;
 			children = (
@@ -122,16 +133,13 @@
 		8486344E1AAA2AF600523BEB /* BuyfromX */ = {
 			isa = PBXGroup;
 			children = (
+				8405FBF11AAA7E140069545B /* Products View */,
 				848634531AAA2AF600523BEB /* AppDelegate.h */,
 				848634541AAA2AF600523BEB /* AppDelegate.m */,
-				848634561AAA2AF600523BEB /* ProductsTableViewController.h */,
-				848634571AAA2AF600523BEB /* ProductsTableViewController.m */,
 				848634591AAA2AF600523BEB /* Main.storyboard */,
 				8486345C1AAA2AF600523BEB /* Images.xcassets */,
 				8486345E1AAA2AF600523BEB /* LaunchScreen.xib */,
 				8486344F1AAA2AF600523BEB /* Supporting Files */,
-				8405FBE21AAA596B0069545B /* BXProductTableViewCell.h */,
-				8405FBE31AAA596B0069545B /* BXProductTableViewCell.m */,
 				8405FBE51AAA5EC40069545B /* BXInitialViewController.h */,
 				8405FBE61AAA5EC40069545B /* BXInitialViewController.m */,
 			);

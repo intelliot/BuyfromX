@@ -1,6 +1,6 @@
 #import "BXProductTableViewCell.h"
 
-#define ROW_MARGIN 6.0f
+#define ROW_MARGIN 10
 #define ROW_HEIGHT 200
 
 @interface BXProductTableViewCell ()
@@ -15,45 +15,45 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+        UIFont *BT_MONO_20 = [UIFont fontWithName:@"bt_mono-Regular" size:20.0f];
+        
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.priceLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        self.priceLabel.font = [UIFont fontWithName:@"bt_mono-Regular" size:20.0f];
+        self.priceLabel.font = BT_MONO_20;
         self.priceLabel.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:self.priceLabel];
         
+        self.textLabel.font = BT_MONO_20;
+        
         self.orderButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.orderButton setTitle:NSLocalizedString(@"Order", @"Order") forState:UIControlStateNormal];
-        self.orderButton.titleLabel.shadowColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
-        self.orderButton.titleLabel.shadowOffset = CGSizeMake(0.0f, -0.5f);
-        self.orderButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16.0f];
-        
-        UIImage *orderImage = [UIImage imageNamed:@"ButtonOrder.png"];
-        UIImage *orderPressedImage = [UIImage imageNamed:@"ButtonOrderPressed.png"];
-        UIEdgeInsets insets = UIEdgeInsetsMake(orderImage.size.height/2, orderImage.size.width/2, orderImage.size.height/2, orderImage.size.width/2);
-        [self.orderButton setBackgroundImage:[orderImage resizableImageWithCapInsets:insets] forState:UIControlStateNormal];
-        [self.orderButton setBackgroundImage:[orderPressedImage resizableImageWithCapInsets:insets] forState:UIControlStateHighlighted];
+        self.orderButton.titleLabel.font = BT_MONO_20;
         [self addSubview:self.orderButton];
+        
+        self.separatorInset = UIEdgeInsetsZero;
     }
     return self;
 }
 
 - (void)layoutSubviews {
+    [super layoutSubviews];
+    
     CGFloat x = ROW_MARGIN;
     CGFloat y = ROW_MARGIN;
-    self.backgroundView.frame = CGRectMake(x, y, self.frame.size.width - ROW_MARGIN*2.0f, 167.0f);
-    x += 10.0f;
     
-    self.imageView.frame = CGRectMake(x, y + 1.0f, 120.0f, 165.0f);
-    x += 120.0f + 5.0f;
-    y += 10.0f;
+    CGRect cvFrame = self.contentView.frame;
     
-    [self.priceLabel sizeToFit];
-    CGFloat priceX = self.frame.size.width - self.priceLabel.frame.size.width - ROW_MARGIN - 10.0f;
-    self.priceLabel.frame = CGRectMake(priceX, ROW_MARGIN + 10.0f, self.priceLabel.frame.size.width, self.priceLabel.frame.size.height);
+    self.imageView.frame = CGRectMake(x, y + 1.0f, cvFrame.size.width - x * 2, 100);
+    
+    y += self.imageView.frame.size.height + ROW_MARGIN;
     
     [self.textLabel sizeToFit];
     self.textLabel.frame = CGRectMake(x + 2.0f, y, self.textLabel.frame.size.width, self.textLabel.frame.size.height);
-    y += self.textLabel.frame.size.height + 2.0f;
+    y += self.textLabel.frame.size.height + ROW_MARGIN;
+    
+    [self.priceLabel sizeToFit];
+    CGFloat priceX = x;
+    self.priceLabel.frame = CGRectMake(priceX, y, self.priceLabel.frame.size.width, self.priceLabel.frame.size.height);
     
     // For adjusting based on the addition of other views
     y += 6.0f;
@@ -65,8 +65,23 @@
     self.imageView.file = (PFFile *)product[@"image"];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self.imageView loadInBackground];
-    
-    self.priceLabel.text = [product[@"price"] stringValue];
+    self.textLabel.text = product[@"name"];
+    NSString *currency = product[@"currency"];
+    NSNumber *price = product[@"price"];
+    NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+    fmt.numberStyle = NSNumberFormatterCurrencyStyle;
+    if ([currency isEqualToString:@"USD_penny"]) {
+        fmt.currencyCode = @"USD";
+        NSNumber *priceInUSD = @([price integerValue] / 100.0);
+        self.priceLabel.text = [fmt stringFromNumber:priceInUSD];
+    } else if ([currency isEqualToString:@"XBT_satoshi"]) {
+        fmt.currencyCode = @"uXBT";
+        fmt.currencySymbol = @"μ฿";
+        NSNumber *priceInuXBT = @([price integerValue] / 100.0);
+        self.priceLabel.text = [fmt stringFromNumber:priceInuXBT];
+    } else {
+        self.priceLabel.text = [price stringValue];
+    }
 }
 
 @end

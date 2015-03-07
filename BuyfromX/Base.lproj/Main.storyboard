@@ -40,6 +40,9 @@
                                         <fontDescription key="fontDescription" name="bt_mono-Regular" family="bt_mono" pointSize="36"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="20" y="140" width="179" height="42"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -63,7 +66,8 @@
                                         <exclude reference="bZp-sR-ewt"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="91" y="61" width="218" height="478"/>
                                     <mask key="constraints">
                                         <include reference="D7B-5u-i3M"/>
                                         <include reference="dFf-4c-IFS"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjR-Xq-c2d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vjR-Xq-c2d">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -88,6 +88,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgI-Q2-HxI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1155" y="278"/>
+        </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="phu-E7-XNb">
+            <objects>
+                <viewController storyboardIdentifier="BXProductDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x6t-Oh-2GJ" customClass="BXProductDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RsS-NQ-KEt"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gkr-o5-VYU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hts-Fw-Qy0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xy-56-5C5">
+                                <rect key="frame" x="244" y="113" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9xy-56-5C5" firstAttribute="top" secondItem="RsS-NQ-KEt" secondAttribute="bottom" constant="93" id="L6f-BS-QVH"/>
+                            <constraint firstAttribute="centerX" secondItem="9xy-56-5C5" secondAttribute="centerX" id="fVb-ni-GFp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="9xy-56-5C5" id="mCX-x0-bAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8VT-Rv-byg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="952"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UVH-o7-NiT">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04C3625F1AAC289700146FD5 /* BXProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C3625E1AAC289700146FD5 /* BXProductDetailViewController.m */; };
 		179730BB9A941C5CD5DB39F4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ACD5607F61FC2CB48E56B7A /* libPods.a */; };
 		8405FBE41AAA596B0069545B /* BXProductTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405FBE31AAA596B0069545B /* BXProductTableViewCell.m */; };
 		8405FBE71AAA5EC40069545B /* BXInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8405FBE61AAA5EC40069545B /* BXInitialViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C3625D1AAC289700146FD5 /* BXProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BXProductDetailViewController.h; sourceTree = "<group>"; };
+		04C3625E1AAC289700146FD5 /* BXProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BXProductDetailViewController.m; sourceTree = "<group>"; };
 		2E4C09C779B20BDCD5C845C9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		5AA2E885B8CF7C64CFCD220D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7ACD5607F61FC2CB48E56B7A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +109,8 @@
 				848634571AAA2AF600523BEB /* ProductsTableViewController.m */,
 				8405FBE21AAA596B0069545B /* BXProductTableViewCell.h */,
 				8405FBE31AAA596B0069545B /* BXProductTableViewCell.m */,
+				04C3625D1AAC289700146FD5 /* BXProductDetailViewController.h */,
+				04C3625E1AAC289700146FD5 /* BXProductDetailViewController.m */,
 			);
 			name = "Products View";
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				8405FBE41AAA596B0069545B /* BXProductTableViewCell.m in Sources */,
 				848634551AAA2AF600523BEB /* AppDelegate.m in Sources */,
 				848634521AAA2AF600523BEB /* main.m in Sources */,
+				04C3625F1AAC289700146FD5 /* BXProductDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

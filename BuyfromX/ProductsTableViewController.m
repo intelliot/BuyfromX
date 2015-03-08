@@ -1,5 +1,6 @@
 #import "ProductsTableViewController.h"
 #import "BXProductTableViewCell.h"
+#import "BXProductDetailViewController.h"
 #import <FLEX/FLEXManager.h>
 #import <Parse/Parse.h>
 
@@ -56,8 +57,7 @@ static NSString *cellIdentifier = @"ProductCell";
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     // Remove seperator inset
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];
@@ -72,6 +72,13 @@ static NSString *cellIdentifier = @"ProductCell";
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BXProductDetailViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"BXProductDetailViewController"];
+    [vc setProduct:self.objects[indexPath.row]];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <Braintree/Braintree.h>
 
 @interface AppDelegate ()
 
@@ -19,7 +20,11 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-
+    
+    
+    [Braintree setReturnURLScheme:@"com.intelliot.BuyfromX.payments"];
+    
+    
     // Show available fonts
 //    NSArray *fontFamilies = [UIFont familyNames];
 //    for (int i = 0; i < [fontFamilies count]; i++)
@@ -30,6 +35,15 @@
 //    }
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    return [Braintree handleOpenURL:url sourceApplication:sourceApplication];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
